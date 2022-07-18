@@ -19,16 +19,25 @@ declare module 'styled-components' {
       spaceGrotesk: `'Space Grotesk', sans-serif;`
       inter: `'Inter', sans-serif`
     }
+    fontWeight: {
+      '700': 700
+      '600': 600
+      '400': 400
+    }
     sizing: {
       '4px': '0.25rem'
       '8px': '0.5rem'
       '12px': '0.75rem'
       '16px': '1rem'
+      '18px': '1.125rem'
       '20px': '1.25rem'
       '24px': '1.5rem'
       '28px': '1.75rem'
+      '30px': '1.875rem'
       '32px': '2rem'
+      '34px': '2.125rem'
       '36px': '2.25rem'
+      '38px': '2.375rem'
       '40px': '2.5rem'
       '44px': '2.75rem'
       '48px': '3rem'
@@ -36,6 +45,7 @@ declare module 'styled-components' {
       '56px': '3.5rem'
       '60px': '3.75rem'
       '64px': '4rem'
+      '70px': '4.375rem'
     }
   }
 }
