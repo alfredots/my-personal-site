@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { Main } from 'components/Main'
+import { Home } from 'views/Home'
 
-export default function Home() {
+export default function Index() {
   return (
     <>
       <Head>
@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Main />
+      <Home />
     </>
   )
 }

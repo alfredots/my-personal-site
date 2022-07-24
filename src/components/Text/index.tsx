@@ -1,9 +1,9 @@
 import { TypeColors } from 'common/styles/theme'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, DOMAttributes } from 'react'
 
 import * as S from './styles'
 
-interface TextProps {
+export type TextProps = {
   tag: 'h1' | 'h2' | 'h3' | 'H4' | 'p' | 'span'
   children: ReactNode
   variant:
@@ -19,22 +19,38 @@ interface TextProps {
     | 'p4'
     | 'p5'
   fontFamily?: 'spaceGrotesk' | 'inter'
-  color: keyof TypeColors
-}
+  fontSize?: string
+  lineHeight?: string
+  textAlign?: 'center' | 'left' | 'right' | 'justify'
+  color?: keyof TypeColors
+  cursor?: 'pointer' | 'none'
+} & React.HTMLAttributes<HTMLParagraphElement>
 
 export const Text = ({
   tag = 'p',
   children,
   variant = 'p1-regular',
   fontFamily,
-  color = 'white'
+  fontSize,
+  lineHeight,
+  textAlign,
+  cursor = 'pointer',
+  color = 'white',
+  ...rest
 }: TextProps) => {
   return (
     <S.Container
-      as={tag}
-      variant={variant}
-      fontFamily={fontFamily}
-      color={color}
+      {...{
+        as: tag,
+        variant,
+        fontFamily,
+        fontSize,
+        lineHeight,
+        textAlign,
+        color,
+        cursor,
+        ...{ ...rest }
+      }}
     >
       {children}
     </S.Container>

@@ -1,24 +1,10 @@
 import { TypeColors } from 'common/styles/theme'
 import styled, { css } from 'styled-components'
+import { TextProps } from './index'
 
-interface TextProps {
-  variant:
-    | 'display'
-    | 'h1'
-    | 'h2'
-    | 'h3'
-    | 'h4'
-    | 'p1-regular'
-    | 'p1-semibold'
-    | 'p2'
-    | 'p3'
-    | 'p4'
-    | 'p5'
-  fontFamily: 'spaceGrotesk' | 'inter'
-  color: keyof TypeColors
-}
+type TextStyledProps = Omit<TextProps, 'children' | 'tag'>
 
-export const Container = styled.div<TextProps>`
+export const Container = styled.div<TextStyledProps>`
   ${({ variant }) =>
     variant === 'display' &&
     css(
@@ -151,5 +137,9 @@ export const Container = styled.div<TextProps>`
       `
     )}
 
-  ${({ color }) => css(({ theme }) => `color: ${theme.colors[color]}`)}
+  ${({ color }) => css(({ theme }) => `color: ${theme.colors[color]};`)}
+  ${({ fontSize }) => fontSize && `font-size: ${fontSize};`}
+  ${({ lineHeight }) => lineHeight && `line-height: ${lineHeight};`}
+  ${({ textAlign }) => textAlign && `text-align: ${textAlign};`}
+  ${({ cursor }) => cursor && `cursor: ${cursor};`}
 `
