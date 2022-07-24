@@ -11,7 +11,7 @@ export const Container = styled.div<BoxStyleProps>`
   ${({ maxHeight }) => !!maxHeight && `max-height:${maxHeight};`}
   ${({ minHeight }) => !!minHeight && `min-height:${minHeight};`}
   ${({ margin }) => !!margin && `margin:${margin};`}
-  ${({ marginTop }) => !!marginTop && `margin-top:${marginTop};`}
+  ${({ marginTop }) => !!marginTop && `margin-top:${marginTop instanceof Array ? marginTop[0] : marginTop};`}
   ${({ marginBottom }) => !!marginBottom && `margin-bottom:${marginBottom};`}
   ${({ marginLeft }) => !!marginLeft && `margin-left:${marginLeft};`}
   ${({ marginRight }) => !!marginRight && `margin-right:${marginRight};`}
@@ -53,4 +53,12 @@ ${({ color }) =>
     )}
 
   display: flex;
+
+  @media (min-width: 768px) {
+    ${({ marginTop }) => !!marginTop && `margin-top:${marginTop instanceof Array ? marginTop[1] : marginTop};`}
+  }
+
+  @media (min-width: 1024px) {
+    ${({ marginTop }) => !!marginTop && `margin-top:${marginTop instanceof Array ? marginTop[2] : marginTop};`}
+  }
 `

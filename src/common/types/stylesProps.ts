@@ -9,7 +9,7 @@ export type SizingProps = {
 
 export type SpacingProps = {
   margin?: string
-  marginTop?: string
+  marginTop?: string[] | string
   marginBottom?: string
   marginLeft?: string
   marginRight?: string

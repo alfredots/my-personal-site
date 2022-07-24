@@ -23,6 +23,6 @@ export const MainContainer = styled.section`
 
   padding: 0 1rem;
   @media (min-width: 1024px) {
-    padding: 0;
+    padding: 0 1rem;
   }
 `

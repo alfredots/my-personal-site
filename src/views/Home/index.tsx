@@ -11,7 +11,7 @@ export const Home = () => (
       <Box marginTop="64px">
         <Menu />
       </Box>
-      <Box marginTop="148px">
+      <Box marginTop={["48px","48px","148px"]}>
         <Image
           src="https://i.ibb.co/RQC5GJy/1582584228526-1.jpg"
           width={180}
