@@ -1,17 +1,20 @@
+import { device } from 'common/styles/device'
+import { haveArrayProps } from 'common/styles/utils'
 import styled, { css } from 'styled-components'
 import { BoxProps } from '.'
 
 type BoxStyleProps = Omit<BoxProps, 'children'>
 
 export const Container = styled.div<BoxStyleProps>`
-  ${({ width }) => !!width && `width:${width};`}
+  ${({ width }) => !!width && `width:${haveArrayProps(width, 0)};`}
   ${({ maxWidth }) => !!maxWidth && `max-width:${maxWidth};`}
   ${({ minWidth }) => !!minWidth && `min-width:${minWidth};`}
   ${({ height }) => !!height && `height:${height};`}
   ${({ maxHeight }) => !!maxHeight && `max-height:${maxHeight};`}
   ${({ minHeight }) => !!minHeight && `min-height:${minHeight};`}
   ${({ margin }) => !!margin && `margin:${margin};`}
-  ${({ marginTop }) => !!marginTop && `margin-top:${marginTop instanceof Array ? marginTop[0] : marginTop};`}
+  ${({ marginTop }) =>
+    !!marginTop && `margin-top:${haveArrayProps(marginTop, 0)};`}
   ${({ marginBottom }) => !!marginBottom && `margin-bottom:${marginBottom};`}
   ${({ marginLeft }) => !!marginLeft && `margin-left:${marginLeft};`}
   ${({ marginRight }) => !!marginRight && `margin-right:${marginRight};`}
@@ -54,11 +57,27 @@ ${({ color }) =>
 
   display: flex;
 
-  @media (min-width: 768px) {
-    ${({ marginTop }) => !!marginTop && `margin-top:${marginTop instanceof Array ? marginTop[1] : marginTop};`}
+  ${device.sm} {
+    ${({ width }) => !!width && `width:${haveArrayProps(width, 1)};`}
+    ${({ marginTop }) =>
+      !!marginTop && `margin-top:${haveArrayProps(marginTop, 1)};`}
   }
 
-  @media (min-width: 1024px) {
-    ${({ marginTop }) => !!marginTop && `margin-top:${marginTop instanceof Array ? marginTop[2] : marginTop};`}
+  ${device.md} {
+    ${({ width }) => !!width && `width:${haveArrayProps(width, 2)};`}
+    ${({ marginTop }) =>
+      !!marginTop && `margin-top:${haveArrayProps(marginTop, 2)};`}
+  }
+
+  ${device.lg} {
+    ${({ width }) => !!width && `width:${haveArrayProps(width, 3)};`}
+    ${({ marginTop }) =>
+      !!marginTop && `margin-top:${haveArrayProps(marginTop, 3)};`}
+  }
+
+  ${device.xl} {
+    ${({ width }) => !!width && `width:${haveArrayProps(width, 4)};`}
+    ${({ marginTop }) =>
+      !!marginTop && `margin-top:${haveArrayProps(marginTop, 4)};`}
   }
 `

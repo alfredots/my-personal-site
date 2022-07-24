@@ -16,7 +16,7 @@ export const SocialMedia = () => {
           <img src="/img/home/instagram-icon.svg" alt="instagram icone" />
         </a>
         <a
-          href="https://www.instagram.com/garotocaos_/"
+          href="https://api.whatsapp.com/send?phone=5598991783538"
           target="_blank"
           rel="noreferrer"
         >

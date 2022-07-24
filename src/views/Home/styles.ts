@@ -20,6 +20,7 @@ export const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   padding: 0 1rem;
   @media (min-width: 1024px) {

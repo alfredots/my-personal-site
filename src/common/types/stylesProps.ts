@@ -1,5 +1,5 @@
 export type SizingProps = {
-  width?: string
+  width?: string | string[]
   minWidth?: string
   maxWidth?: string
   height?: string

@@ -3,6 +3,8 @@ import React, { ReactNode, DOMAttributes } from 'react'
 
 import * as S from './styles'
 
+type TextAlignProps = 'center' | 'left' | 'right' | 'justify'
+
 export type TextProps = {
   tag: 'h1' | 'h2' | 'h3' | 'H4' | 'p' | 'span'
   children: ReactNode
@@ -19,11 +21,11 @@ export type TextProps = {
     | 'p4'
     | 'p5'
   fontFamily?: 'spaceGrotesk' | 'inter'
-  fontSize?: string
-  lineHeight?: string
-  textAlign?: 'center' | 'left' | 'right' | 'justify'
+  fontSize?: string | string[]
+  lineHeight?: string | string[]
+  textAlign?: TextAlignProps[] | TextAlignProps
   color?: keyof TypeColors
-  cursor?: 'pointer' | 'none'
+  cursor?: 'pointer' | 'none' | 'unset'
 } & React.HTMLAttributes<HTMLParagraphElement>
 
 export const Text = ({
@@ -34,7 +36,7 @@ export const Text = ({
   fontSize,
   lineHeight,
   textAlign,
-  cursor = 'pointer',
+  cursor = 'unset',
   color = 'white',
   ...rest
 }: TextProps) => {

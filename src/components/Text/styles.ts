@@ -1,4 +1,6 @@
+import { device } from 'common/styles/device'
 import { TypeColors } from 'common/styles/theme'
+import { haveArrayProps } from 'common/styles/utils'
 import styled, { css } from 'styled-components'
 import { TextProps } from './index'
 
@@ -47,7 +49,7 @@ export const Container = styled.div<TextStyledProps>`
       ({ theme }) =>
         `
         font-family: ${theme.fontFamily.spaceGrotesk};
-        font-size: ${theme.sizing['30px']};
+        font-size: ${theme.sizing['44px']};
         line-height: 36px;
         font-weight: ${theme.fontWeight['700']};
       `
@@ -138,8 +140,33 @@ export const Container = styled.div<TextStyledProps>`
     )}
 
   ${({ color }) => css(({ theme }) => `color: ${theme.colors[color]};`)}
-  ${({ fontSize }) => fontSize && `font-size: ${fontSize};`}
-  ${({ lineHeight }) => lineHeight && `line-height: ${lineHeight};`}
-  ${({ textAlign }) => textAlign && `text-align: ${textAlign};`}
+  ${({ fontSize }) => fontSize && `font-size: ${haveArrayProps(fontSize, 0)};`}
+  ${({ lineHeight }) =>
+    lineHeight && `line-height: ${haveArrayProps(lineHeight, 0)};`}
+  ${({ textAlign }) =>
+    textAlign && `text-align: ${haveArrayProps(textAlign, 0)};`}
   ${({ cursor }) => cursor && `cursor: ${cursor};`}
+
+
+  ${device.sm} {
+    ${({ fontSize }) =>
+      fontSize && `font-size: ${haveArrayProps(fontSize, 1)};`}
+
+    ${({ lineHeight }) =>
+      lineHeight && `line-height: ${haveArrayProps(lineHeight, 1)};`}
+
+    ${({ textAlign }) =>
+      textAlign && `text-align: ${haveArrayProps(textAlign, 1)};`}
+  }
+
+  ${device.md} {
+    ${({ fontSize }) =>
+      fontSize && `font-size: ${haveArrayProps(fontSize, 2)};`}
+
+    ${({ lineHeight }) =>
+      lineHeight && `line-height: ${haveArrayProps(lineHeight, 2)};`}
+
+    ${({ textAlign }) =>
+      textAlign && `text-align: ${haveArrayProps(textAlign, 2)};`}
+  }
 `

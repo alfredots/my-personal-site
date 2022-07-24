@@ -12,7 +12,7 @@ export const Menu = () => {
   return (
     <Box height="36px" alignContent="center" justifyContent="center">
       <Text
-        variant="h2"
+        variant="h3"
         tag="h3"
         lineHeight="33px"
         cursor="pointer"
@@ -22,7 +22,7 @@ export const Menu = () => {
       </Text>
       <S.Divider />
       <Text
-        variant="h2"
+        variant="h3"
         tag="h3"
         cursor="pointer"
         lineHeight="33px"
@@ -32,7 +32,7 @@ export const Menu = () => {
       </Text>
       <S.Divider />
       <Text
-        variant="h2"
+        variant="h3"
         tag="h3"
         cursor="pointer"
         lineHeight="33px"
