@@ -6,20 +6,9 @@ import * as S from './styles'
 type TextAlignProps = 'center' | 'left' | 'right' | 'justify'
 
 export type TextProps = {
-  tag: 'h1' | 'h2' | 'h3' | 'H4' | 'p' | 'span'
+  tag: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span'
   children: ReactNode
-  variant:
-    | 'display'
-    | 'h1'
-    | 'h2'
-    | 'h3'
-    | 'h4'
-    | 'p1-regular'
-    | 'p1-semibold'
-    | 'p2'
-    | 'p3'
-    | 'p4'
-    | 'p5'
+  variant: 'display' | 'h1' | 'h2' | 'h3' | 'h4' | 'p-regular' | 'p-semibold'
   fontFamily?: 'spaceGrotesk' | 'inter'
   fontSize?: string | string[]
   lineHeight?: string | string[]
@@ -31,7 +20,7 @@ export type TextProps = {
 export const Text = ({
   tag = 'p',
   children,
-  variant = 'p1-regular',
+  variant = 'p-regular',
   fontFamily,
   fontSize,
   lineHeight,

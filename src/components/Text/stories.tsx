@@ -19,7 +19,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Text> = (args) => (
-  <Text {...args}>texto teste</Text>
+  <Text {...args}>Olá, meu nome é Alfredo Tito</Text>
 )
 
 export const Primary = Template.bind({})

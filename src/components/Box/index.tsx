@@ -1,5 +1,6 @@
 import { TypeColors } from 'common/styles/theme'
 import {
+  BorderProps,
   FlexBoxProps,
   SizingProps,
   SpacingProps
@@ -9,12 +10,13 @@ import React, { ReactNode } from 'react'
 import * as S from './styles'
 
 export type BoxProps = {
-  children: ReactNode
+  children?: ReactNode
   bgColor?: keyof TypeColors
   color?: keyof TypeColors
 } & FlexBoxProps &
   SizingProps &
-  SpacingProps
+  SpacingProps &
+  BorderProps
 
 export const Box = ({
   bgColor,
@@ -44,6 +46,11 @@ export const Box = ({
   flexGrow,
   flexShrink,
   alignSelf,
+  border,
+  borderColor,
+  borderRadius,
+  borderStyle,
+  borderWidth,
   gap
 }: BoxProps) => {
   return (
@@ -75,6 +82,11 @@ export const Box = ({
         flexGrow,
         flexShrink,
         alignSelf,
+        border,
+        borderColor,
+        borderRadius,
+        borderStyle,
+        borderWidth,
         gap
       }}
     >

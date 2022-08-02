@@ -7,7 +7,7 @@ type BoxStyleProps = Omit<BoxProps, 'children'>
 
 export const Container = styled.div<BoxStyleProps>`
   ${({ width }) => !!width && `width:${haveArrayProps(width, 0)};`}
-  ${({ maxWidth }) => !!maxWidth && `max-width:${maxWidth};`}
+  ${({ maxWidth }) => !!maxWidth && `max-width:${haveArrayProps(maxWidth, 0)};`}
   ${({ minWidth }) => !!minWidth && `min-width:${minWidth};`}
   ${({ height }) => !!height && `height:${height};`}
   ${({ maxHeight }) => !!maxHeight && `max-height:${maxHeight};`}
@@ -28,7 +28,7 @@ export const Container = styled.div<BoxStyleProps>`
     !!flexDirection && `flex-direction:${flexDirection};`}
   ${({ flexWrap }) => !!flexWrap && `flex-wrap:${flexWrap};`}
   ${({ justifyContent }) =>
-    !!justifyContent && `justify-content:${justifyContent};`}
+    !!justifyContent && `justify-content:${haveArrayProps(justifyContent, 0)};`}
   ${({ alignItems }) => !!alignItems && `align-items:${alignItems};`}
   ${({ alignContent }) => !!alignContent && `align-content:${alignContent};`}
   ${({ order }) => !!order && `order:${order};`}
@@ -36,6 +36,11 @@ export const Container = styled.div<BoxStyleProps>`
   ${({ flexShrink }) => !!flexShrink && `flex-shrink:${flexShrink};`}
   ${({ alignSelf }) => !!alignSelf && `align-self:${alignSelf};`}
   ${({ gap }) => !!gap && `gap:${gap};`}
+  ${({ border }) => !!border && `border:${border};`}
+  ${({ borderRadius }) => !!borderRadius && `border-radius:${borderRadius};`}
+  ${({ borderColor }) => !!borderColor && `border-color:${borderColor};`}
+  ${({ borderStyle }) => !!borderStyle && `border-style:${borderStyle};`}
+  ${({ borderWidth }) => !!borderWidth && `border-width:${borderWidth};`}
 
   ${({ bgColor }) =>
     bgColor &&
@@ -59,25 +64,45 @@ ${({ color }) =>
 
   ${device.sm} {
     ${({ width }) => !!width && `width:${haveArrayProps(width, 1)};`}
+    ${({ maxWidth }) =>
+      !!maxWidth && `max-width:${haveArrayProps(maxWidth, 1)};`}
     ${({ marginTop }) =>
       !!marginTop && `margin-top:${haveArrayProps(marginTop, 1)};`}
+    ${({ justifyContent }) =>
+      !!justifyContent &&
+      `justify-content:${haveArrayProps(justifyContent, 1)};`}
   }
 
   ${device.md} {
     ${({ width }) => !!width && `width:${haveArrayProps(width, 2)};`}
+    ${({ maxWidth }) =>
+      !!maxWidth && `max-width:${haveArrayProps(maxWidth, 2)};`}
     ${({ marginTop }) =>
       !!marginTop && `margin-top:${haveArrayProps(marginTop, 2)};`}
+    ${({ justifyContent }) =>
+      !!justifyContent &&
+      `justify-content:${haveArrayProps(justifyContent, 2)};`}
   }
 
   ${device.lg} {
     ${({ width }) => !!width && `width:${haveArrayProps(width, 3)};`}
+    ${({ maxWidth }) =>
+      !!maxWidth && `max-width:${haveArrayProps(maxWidth, 3)};`}
     ${({ marginTop }) =>
       !!marginTop && `margin-top:${haveArrayProps(marginTop, 3)};`}
+    ${({ justifyContent }) =>
+      !!justifyContent &&
+      `justify-content:${haveArrayProps(justifyContent, 3)};`}
   }
 
   ${device.xl} {
     ${({ width }) => !!width && `width:${haveArrayProps(width, 4)};`}
+    ${({ maxWidth }) =>
+      !!maxWidth && `max-width:${haveArrayProps(maxWidth, 4)};`}
     ${({ marginTop }) =>
       !!marginTop && `margin-top:${haveArrayProps(marginTop, 4)};`}
+    ${({ justifyContent }) =>
+      !!justifyContent &&
+      `justify-content:${haveArrayProps(justifyContent, 4)};`}
   }
 `

@@ -12,8 +12,8 @@ export const Menu = () => {
   return (
     <Box height="36px" alignContent="center" justifyContent="center">
       <Text
-        variant="h3"
-        tag="h3"
+        variant="h4"
+        tag="h4"
         lineHeight="33px"
         cursor="pointer"
         onClick={() => goTo('/')}
@@ -22,8 +22,8 @@ export const Menu = () => {
       </Text>
       <S.Divider />
       <Text
-        variant="h3"
-        tag="h3"
+        variant="h4"
+        tag="h4"
         cursor="pointer"
         lineHeight="33px"
         onClick={() => goTo('/sobre')}
@@ -32,8 +32,8 @@ export const Menu = () => {
       </Text>
       <S.Divider />
       <Text
-        variant="h3"
-        tag="h3"
+        variant="h4"
+        tag="h4"
         cursor="pointer"
         lineHeight="33px"
         onClick={() => goTo('/portfolio')}

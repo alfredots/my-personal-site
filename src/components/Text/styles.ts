@@ -1,5 +1,4 @@
 import { device } from 'common/styles/device'
-import { TypeColors } from 'common/styles/theme'
 import { haveArrayProps } from 'common/styles/utils'
 import styled, { css } from 'styled-components'
 import { TextProps } from './index'
@@ -13,8 +12,8 @@ export const Container = styled.div<TextStyledProps>`
       ({ theme }) =>
         `
         font-family: ${theme.fontFamily.spaceGrotesk};
-        font-size: ${theme.sizing['70px']};
-        line-height: 78px;
+        font-size: 7rem;
+        line-height: 7.8rem;
         font-weight: ${theme.fontWeight['700']};
       `
     )}
@@ -25,9 +24,19 @@ export const Container = styled.div<TextStyledProps>`
       ({ theme }) =>
         `
         font-family: ${theme.fontFamily.spaceGrotesk};
-        font-size: ${theme.sizing['38px']};
-        line-height: 46px;
+        font-size: 3rem;
+        line-height: 4rem;
         font-weight: ${theme.fontWeight['700']};
+
+        ${device.sm} {
+          font-size: 3.4rem;
+          line-height: 4rem;
+        }
+
+        ${device.lg} {
+          font-size: 5rem;
+          line-height: 5.9rem;
+        }
       `
     )}
 
@@ -37,9 +46,19 @@ export const Container = styled.div<TextStyledProps>`
       ({ theme }) =>
         `
         font-family: ${theme.fontFamily.spaceGrotesk};
-        font-size: ${theme.sizing['34px']};
-        line-height: 44px;
+        font-size: 2.8rem;
+        line-height: 4rem;
         font-weight: ${theme.fontWeight['700']};
+
+        ${device.sm} {
+          font-size: 3rem;
+          line-height: 4rem;
+        }
+
+        ${device.lg} {
+          font-size: 4.6rem;
+          line-height: 5.5rem;
+        }
       `
     )}
 
@@ -49,9 +68,19 @@ export const Container = styled.div<TextStyledProps>`
       ({ theme }) =>
         `
         font-family: ${theme.fontFamily.spaceGrotesk};
-        font-size: ${theme.sizing['44px']};
-        line-height: 36px;
+        font-size: 2.6rem;
+        line-height: 4rem;
         font-weight: ${theme.fontWeight['700']};
+
+        ${device.sm} {
+          font-size: 2.8rem;
+          line-height: 4rem;
+        }
+
+        ${device.lg} {
+          font-size: 4.2rem;
+          line-height: 5.1rem;
+        }
       `
     )}
 
@@ -61,81 +90,63 @@ export const Container = styled.div<TextStyledProps>`
       ({ theme }) =>
         `
         font-family: ${theme.fontFamily.spaceGrotesk};
-        font-size: ${theme.sizing['24px']};
-        line-height: 28px;
+        font-size: 2.4rem;
+        line-height: 4rem;
         font-weight: ${theme.fontWeight['700']};
+
+        ${device.sm} {
+          font-size: 2.6rem;
+          line-height: 4rem;
+        }
+
+        ${device.lg} {
+          font-size: 3rem;
+          line-height: 4.2rem;
+        }
       `
     )}
 
   ${({ variant }) =>
-    variant === 'p1-regular' &&
+    variant === 'p-regular' &&
     css(
       ({ theme }) =>
         `
         font-family: ${theme.fontFamily.inter};
-        font-size: ${theme.sizing['20px']};
-        line-height: 30px;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
         font-weight: ${theme.fontWeight['400']};
+
+        ${device.sm} {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+        }
+
+        ${device.lg} {
+          font-size: 2rem;
+          line-height: 2.8rem;
+        }
       `
     )}
 
   ${({ variant }) =>
-    variant === 'p1-semibold' &&
+    variant === 'p-semibold' &&
     css(
       ({ theme }) =>
         `
         font-family: ${theme.fontFamily.inter};
-        font-size: ${theme.sizing['20px']};
-        line-height: 30px;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
         font-weight: ${theme.fontWeight['600']};
-      `
-    )}
 
-  ${({ variant }) =>
-    variant === 'p2' &&
-    css(
-      ({ theme }) =>
-        `
-        font-family: ${theme.fontFamily.inter};
-        font-size: ${theme.sizing['18px']};
-        line-height: 22px;
-        font-weight: ${theme.fontWeight['400']};
-      `
-    )}
+        ${device.sm} {
+          font-size: 1.8rem;
+          line-height: 2.8rem;
+        }
 
-  ${({ variant }) =>
-    variant === 'p3' &&
-    css(
-      ({ theme }) =>
-        `
-        font-family: ${theme.fontFamily.inter};
-        font-size: ${theme.sizing['16px']};
-        line-height: 18px;
-        font-weight: ${theme.fontWeight['400']};
-      `
-    )}
-
-  ${({ variant }) =>
-    variant === 'p4' &&
-    css(
-      ({ theme }) =>
-        `
-        font-family: ${theme.fontFamily.inter};
-        font-size: ${theme.sizing['14px']};
-        line-height: 18px;
-        font-weight: ${theme.fontWeight['400']};
-      `
-    )}
-
-  ${({ variant }) =>
-    variant === 'p4' &&
-    css(
-      ({ theme }) =>
-        `
-        font-family: ${theme.fontFamily.inter};
-        font-size: ${theme.sizing['12px']};
-        line-height: 18px;
-        font-weight: ${theme.fontWeight['400']};
+        ${device.lg} {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
       `
     )}
 

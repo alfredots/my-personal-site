@@ -1,7 +1,7 @@
 export type SizingProps = {
   width?: string | string[]
   minWidth?: string
-  maxWidth?: string
+  maxWidth?: string | string[]
   height?: string
   minHeight?: string
   maxHeight?: string
@@ -20,15 +20,25 @@ export type SpacingProps = {
   paddingRight?: string
 }
 
+export type BorderProps = {
+  border?: string
+  borderRadius?: string
+  borderColor?: string
+  borderWidth?: string
+  borderStyle?: string
+}
+
+type justifyContentProps =
+  | 'flex-start'
+  | 'center'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+
 export type FlexBoxProps = {
   flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse'
   flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
-  justifyContent?:
-    | 'start'
-    | 'center'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly'
+  justifyContent?: justifyContentProps[] | justifyContentProps
   alignItems?: 'stretch' | 'center' | 'start' | 'end'
   alignContent?: 'start' | 'center' | 'space-between' | 'space-around'
   order?: number
