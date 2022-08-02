@@ -49,6 +49,7 @@ export const Portfolio = () => (
           />
         ))}
       </Box>
+      <Box height="30px" />
     </S.MainContainer>
   </S.Wrapper>
 )
