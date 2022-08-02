@@ -7,6 +7,13 @@ export const projects = [
     link: 'https://staem-challenge.vercel.app/'
   },
   {
+    name: 'Personal Tito',
+    img: 'https://i.ibb.co/DDpHCRj/personal-tito.png',
+    description:
+      'O projeto desenvolvido para o Personal Tito de divulgação de sua consultoria especializada em atividade física.',
+    link: 'https://personal-tito-site.vercel.app/'
+  },
+  {
     name: 'ignews',
     img: 'https://i.ibb.co/cLKrC7c/ignews.png',
     description:

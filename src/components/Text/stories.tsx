@@ -26,6 +26,6 @@ export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   tag: 'p',
-  variant: 'p1-regular',
+  variant: 'p-regular',
   color: 'black2'
 }

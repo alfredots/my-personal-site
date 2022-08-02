@@ -1,5 +1,5 @@
 import { TypeColors } from 'common/styles/theme'
-import React, { ReactNode, DOMAttributes } from 'react'
+import React, { ReactNode } from 'react'
 
 import * as S from './styles'
 

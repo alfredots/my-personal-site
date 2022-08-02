@@ -4,7 +4,7 @@ import { Text } from 'components/Text'
 export const SocialMedia = () => {
   return (
     <Box flexDirection="column" gap="24px" alignItems="center">
-      <Text variant="p1-regular" tag="h3" color="white" fontSize="2rem">
+      <Text variant="p-regular" tag="h3" color="white" fontSize="2rem">
         Me siga nas redes sociais:
       </Text>
       <Box gap="29px">

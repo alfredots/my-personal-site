@@ -24,7 +24,7 @@ export const Card = ({ img, alt, title, text }: CardProps) => {
       <Text variant="h3" tag="h3" fontSize="30px" lineHeight="36px">
         {title}
       </Text>
-      <Text variant="p1-regular" tag="p" fontSize="16px" lineHeight="28px">
+      <Text variant="p-regular" tag="p" fontSize="16px" lineHeight="28px">
         {text}
       </Text>
     </Box>
