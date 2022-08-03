@@ -22,6 +22,7 @@ export const About = () => (
           flexDirection="column"
           gap="28px"
           maxWidth="530px"
+          width={['100%', '50%']}
           alignItems="center"
           justifyContent="center"
           marginTop={['2.4rem', '2.4rem', '0px']}
@@ -40,7 +41,7 @@ export const About = () => (
             possível estudo mais sobre pois auxilia muito no insight de ideias.
           </Text>
         </Box>
-        <Box maxWidth="450px">
+        <Box maxWidth="450px" margin="0 auto">
           <Image
             src="https://i.ibb.co/wrVfqZd/me.jpgg"
             width={450}
@@ -54,7 +55,7 @@ export const About = () => (
         marginTop={['20px', '40px']}
         flexWrap="wrap"
       >
-        <Box flexDirection="column" width="569px">
+        <Box flexDirection="column" width={['100%', '50%']}>
           <Text variant="h1" tag="h1" fontSize="38px">
             Experiência
           </Text>
@@ -68,7 +69,11 @@ export const About = () => (
             </Box>
           ))}
         </Box>
-        <Box flexDirection="column" width="569px">
+        <Box
+          flexDirection="column"
+          width={['100%', '50%']}
+          marginTop={['2rem', '0']}
+        >
           <Text variant="h1" tag="h1" fontSize="38px">
             Educação
           </Text>
