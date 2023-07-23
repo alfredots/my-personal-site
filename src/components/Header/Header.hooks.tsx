@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function useTestDog() {
+export function useHeader() {
   const [value, setValue] = useState(null)
 
   useEffect(() => {

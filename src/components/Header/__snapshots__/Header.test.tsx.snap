@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render the Header 1`] = `
+<header
+  class="flex w-full items-center justify-center py-2 lg:py-4"
+>
+  <h1
+    class="className text-4xl text-white lg:text-5xl"
+  >
+    ALFREDO
+    <span
+      class="text-red-500"
+    >
+      TS
+    </span>
+  </h1>
+</header>
+`;
