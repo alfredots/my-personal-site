@@ -21,6 +21,7 @@
     ],
     "baseUrl": "src",
     "paths": {
+      "@assets/*": ["assets/*"],
       "@views/*": ["views/*"],
       "@hooks": ["hooks/index.ts"],
       "@styles/*": ["styles/*"]
