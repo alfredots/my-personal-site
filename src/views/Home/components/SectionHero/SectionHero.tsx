@@ -1,6 +1,6 @@
 import heroImage from '@assets/hero-image.png'
 
-import { GenericSection } from 'components/common/GenericSection'
+import { GenericSection } from 'components/GenericSection'
 import { NextImage } from 'components/NextImage'
 
 export const SectionHero = () => {

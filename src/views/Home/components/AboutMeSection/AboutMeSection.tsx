@@ -1,15 +1,15 @@
 import aboutMeImage from 'assets/about-me-image.png'
 import { useBreakpoint } from 'hooks/useBreakpoint'
 
-import { GenericSection } from 'components/common/GenericSection'
+import { GenericSection } from 'components/GenericSection'
 import { NextImage } from 'components/NextImage'
-import { SectionTitle } from 'components/SectionTitle'
+import { Title } from 'components/Title'
 
 export const AboutMeSection = () => {
   const { isLg } = useBreakpoint()
   return (
     <GenericSection className="flex flex-col gap-4">
-      <SectionTitle name="About Me" />
+      <Title isTitleSection>About Me</Title>
       <div className="flex w-full justify-between gap-8">
         {isLg && (
           <NextImage
