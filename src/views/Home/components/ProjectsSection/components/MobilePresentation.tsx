@@ -1,3 +1,4 @@
+import { links } from 'assets/portfolio/links'
 import staemImage from 'assets/portfolio/staem.webp'
 import trainerImage from 'assets/portfolio/trainer-tito.webp'
 
@@ -9,21 +10,21 @@ export const MobilePresentation = () => {
     <>
       <div className="mb-4 flex flex-col items-center gap-4">
         <Title>STAEM</Title>
-        <a href="https://staem-challenge.vercel.app/" target="_blank">
+        <a href={links.staem} target="_blank">
           <NextImage
             src={staemImage}
             alt="staem image"
-            className="max-w-[640px] rounded-lg"
+            className="w-full max-w-[640px] rounded-lg"
           />
         </a>
       </div>
       <div className="mb-4 flex flex-col items-center gap-4">
         <Title>Personal</Title>
-        <a href="https://personal-tito-site.vercel.app/" target="_blank">
+        <a href={links.trainer} target="_blank">
           <NextImage
             src={trainerImage}
             alt="personal image"
-            className="max-w-[640px] rounded-lg"
+            className="w-full max-w-[640px] rounded-lg"
           />
         </a>
       </div>

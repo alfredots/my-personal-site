@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 import '../styles/globals.css'
 import { inter } from '@styles/fonts'
+import { Footer } from 'layout/Footer'
 import { Header } from 'layout/Header'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main className={`${inter.className} bg-gray-900 text-white`}>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </main>
     </>
   )
