@@ -1,26 +1,32 @@
-# Template NextJS com Styled Components
+## TODO
+[x] Instalar clsx
+[x] Instalar testes unitários
+[] Instalar storybook na pasta docs
 
-## Introdução
-Template de criação de projetos NextJS com utilização do Styled Components. Além disso com o eslint e prettier configurados. O uso de tema no styled components também está disponível.
+## Estrutura de pastas
 
-Tecnologias:
-- Styled Components.
-- Next-pwa.
-- React Testing Library.
 
-## Como utilizar
+## Organização das pastas
 
-```bash
-npx create next-app -e https://github.com/alfredots/next-styled-boilerplate
+
+## Estrutura dos componentes
+```
+components
+|-- YourComponent
+   |-- YourComponent.stories.tsx
+   |-- YourComponent.spec.tsx
+   |-- interfaces.ts
+   |-- styles.ts
+   |-- index.tsx
 ```
 
-## Getting Started
+## Tailwind
+- Ele te ajuda a manter o padrão no estilo no projeto(pequenos, médios e até de grande portes).
+- Produtividade
+- Criação de componentes.
+- Facilidade de criação no figma.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
+### Bibliotecas interessantes para utilizar com o o Tailwind
+(Tailwind UI)[https://tailwindui.com/]
+(Tailwind Components)[https://tailwindcomponents.com/]
+(Headless UI)[https://headlessui.com/]
