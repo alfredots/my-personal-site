@@ -19,6 +19,7 @@
     "generate": "npm run plop --plopfile plopfile.js"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.13",
     "@types/node": "20.1.4",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
