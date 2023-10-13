@@ -20,6 +20,11 @@ export const ProjectsSection = () => {
         delivering good performance, ensuring that the applications are fast,
         responsive, and efficient.
       </p>
+      <img
+        src="blob:https://vercel.com/04dea61f-a1e1-4687-ae80-d170b501f102"
+        alt=""
+        height={300}
+      />
       {!isMd && <MobilePresentation />}
       {isMd && <DesktopPresentation />}
       {/* <GenericButton className="mx-auto max-w-[515px]">

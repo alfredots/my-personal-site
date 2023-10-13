@@ -2,6 +2,10 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import '../styles/globals.css'
+
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 import { inter } from '@styles/fonts'
 import { Footer } from 'layout/Footer'
 import { Header } from 'layout/Header'
