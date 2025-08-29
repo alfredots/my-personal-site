@@ -11,17 +11,6 @@ html {
   }
 }
 
-.main-container {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #201c2f 0%, #100751 100%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 @function create-stars($n) {
   $stars: "#{math.random(v.$starFieldWidth)}px #{math.random(v.$starFieldHeight)}px #FFF";
 
@@ -92,15 +81,36 @@ html {
   animation: animShootingStar $speed linear infinite;
 }
 
-.stars {
-  @include star-template(v.$numStarOneStars, 1px, v.$starOneScrollDuration);
-}
-.stars2 {
-  @include star-template(v.$numStarTwoStars, 2px, v.$starTwoScrollDuration);
-}
-.stars3 {
-  @include star-template(v.$numStarThreeStars, 3px, v.$starThreeScrollDuration);
-}
-.comet {
-  @include shooting-star-template(v.$numComet, 1px, 10s);
+.background-container {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #201c2f 0%, #100751 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+
+  &__stars {
+    @include star-template(v.$numStarOneStars, 1px, v.$starOneScrollDuration);
+  }
+
+  &__stars2 {
+    @include star-template(v.$numStarTwoStars, 2px, v.$starTwoScrollDuration);
+  }
+
+  &__stars3 {
+    @include star-template(
+      v.$numStarThreeStars,
+      3px,
+      v.$starThreeScrollDuration
+    );
+  }
+
+  &__comet {
+    @include shooting-star-template(v.$numComet, 1px, 10s);
+  }
 }
