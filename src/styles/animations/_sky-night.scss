@@ -82,8 +82,8 @@ html {
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 10px;
   background: linear-gradient(
     to top,
     rgba(255, 255, 255, 0),
@@ -102,5 +102,5 @@ html {
   @include star-template(v.$numStarThreeStars, 3px, v.$starThreeScrollDuration);
 }
 .comet {
-  @include shooting-star-template(v.$numComet, 5px, 10s);
+  @include shooting-star-template(v.$numComet, 1px, 10s);
 }
