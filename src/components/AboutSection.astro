@@ -1,0 +1,17 @@
+---
+import { portfolio } from '../content/portfolio';
+---
+
+<section class="section about" id="sobre" aria-labelledby="sobre-title">
+	<div class="wrap">
+		<p class="section-kicker">01 — apresentação</p>
+		<h2 id="sobre-title">Sobre</h2>
+		<div class="about-card">
+			<div class="avatar-slot" aria-label="Fotografia de Alfredo Tito em breve">foto<br />aqui</div>
+			<div class="about-copy">
+				<div class="stamp" aria-hidden="true">SDE<br />KORIKO</div>
+				{portfolio.about.map((paragraph) => <p>{paragraph}</p>)}
+			</div>
+		</div>
+	</div>
+</section>

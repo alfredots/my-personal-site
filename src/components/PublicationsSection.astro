@@ -1,0 +1,22 @@
+---
+import { portfolio } from '../content/portfolio';
+---
+
+<section class="section publications" id="publicacoes" aria-labelledby="publicacoes-title">
+	<div class="wrap">
+		<p class="section-kicker">05 — selos de bordo</p>
+		<h2 id="publicacoes-title">Publicações &amp; Certificações</h2>
+		<div class="publication-grid">
+			<div>
+				<h3 class="skill-label">publicações</h3>
+				{portfolio.publications.map((publication) => (
+					<article class="publication-item"><span class="publication-seal" aria-hidden="true">✎</span><p>{publication}<small>Artigo acadêmico</small></p></article>
+				))}
+			</div>
+			<div>
+				<h3 class="skill-label">certificações</h3>
+				<ul class="certifications">{portfolio.certifications.map((certification) => <li>{certification}</li>)}</ul>
+			</div>
+		</div>
+	</div>
+</section>

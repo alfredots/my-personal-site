@@ -1,0 +1,21 @@
+---
+import { portfolio } from '../content/portfolio';
+---
+
+<section class="section timeline" id="trajetoria" aria-labelledby="trajetoria-title">
+	<div class="wrap">
+		<p class="section-kicker">02 — a rota até aqui</p>
+		<h2 id="trajetoria-title">Trajetória</h2>
+		<div class="timeline-list">
+			{portfolio.journey.map((item) => (
+				<article class:list={['timeline-item', { current: item.current }]}>
+					<span class="timeline-dot" aria-hidden="true"></span>
+					<p class="timeline-period">{item.period}</p>
+					<h3>{item.role}</h3>
+					<p class="timeline-company">{item.company}</p>
+					{item.achievements.length > 0 && <ul>{item.achievements.map((achievement) => <li>{achievement}</li>)}</ul>}
+				</article>
+			))}
+		</div>
+	</div>
+</section>

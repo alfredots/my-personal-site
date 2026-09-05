@@ -1,0 +1,29 @@
+---
+import { portfolio } from '../content/portfolio';
+const skillGroups = [
+	{ label: 'stack', values: portfolio.skills.stack },
+	{ label: 'infra & dados', values: portfolio.skills['infra & dados'] },
+	{ label: 'ferramentas', values: portfolio.skills.ferramentas },
+];
+---
+
+<section class="section skills" id="habilidades" aria-labelledby="habilidades-title">
+	<div class="wrap">
+		<p class="section-kicker">03 — a bagagem</p>
+		<h2 id="habilidades-title">Habilidades</h2>
+		<div class="skills-grid">
+			<div>
+				{skillGroups.map((group) => (
+					<div class="skill-group">
+						<h3 class="skill-label">{group.label}</h3>
+						<div class="tags">{group.values.map((skill) => <span>{skill}</span>)}</div>
+					</div>
+				))}
+			</div>
+			<div>
+				<h3 class="skill-label">soft skills</h3>
+				<ul class="soft-list">{portfolio.skills.soft.map((skill) => <li>{skill}</li>)}</ul>
+			</div>
+		</div>
+	</div>
+</section>

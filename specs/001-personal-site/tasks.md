@@ -15,28 +15,28 @@
 
 ## Fase 1: Fundacao
 
-- [ ] T001 Inicializar o projeto Astro com TypeScript, scripts `dev`, `build`
+- [x] T001 Inicializar o projeto Astro com TypeScript, scripts `dev`, `build`
   e `preview`, e configuracao `output: 'static'`.
-- [ ] T002 [P] Criar a estrutura base de diretorios em `src/`, incluindo
+- [x] T002 [P] Criar a estrutura base de diretorios em `src/`, incluindo
   `components`, `content`, `layouts`, `pages` e `styles`.
-- [ ] T003 [P] Configurar `.gitignore` com dependencias, artefatos de build,
+- [x] T003 [P] Configurar `.gitignore` com dependencias, artefatos de build,
   arquivos de ambiente e `.DS_Store`.
-- [ ] T004 Criar `src/layouts/BaseLayout.astro` com `lang="pt-BR"`, viewport,
+- [x] T004 Criar `src/layouts/BaseLayout.astro` com `lang="pt-BR"`, viewport,
   title, description, canonical e metadados Open Graph/Twitter.
-- [ ] T005 Criar `src/styles/global.css` com reset, tokens da paleta,
+- [x] T005 Criar `src/styles/global.css` com reset, tokens da paleta,
   tipografia, espacamento, largura de conteudo, foco visivel e
   `prefers-reduced-motion`.
-- [ ] T006 Criar `src/pages/index.astro` usando o layout base e uma ordem
+- [x] T006 Criar `src/pages/index.astro` usando o layout base e uma ordem
   semantica de secoes com um unico `h1`.
-- [ ] T007 Executar o primeiro `npm run build` e corrigir qualquer erro de
+- [x] T007 Executar o primeiro `npm run build` e corrigir qualquer erro de
   configuracao antes de iniciar os componentes.
 
 ## Fase 2: Conteudo tipado
 
-- [ ] T008 Criar `src/content/portfolio.ts` com tipos para identidade, hero,
+- [x] T008 Criar `src/content/portfolio.ts` com tipos para identidade, hero,
   biografia, trajetoria, habilidades, projetos, publicacoes, certificacoes e
   contatos.
-- [ ] T009 [P] Transcrever o conteudo inicial do mockup para os dados
+- [x] T009 [P] Transcrever o conteudo inicial do mockup para os dados
   estruturados, preservando acentos e links oficiais.
 - [ ] T010 Revisar e marcar como pendentes datas, metricas, projetos,
   fotografia e demais informacoes que ainda nao foram confirmadas.
@@ -45,37 +45,37 @@
 
 ## Fase 3: Estrutura da pagina
 
-- [ ] T012 Implementar `SiteHeader.astro` com marca, navegacao por ancoras e
+- [x] T012 Implementar `SiteHeader.astro` com marca, navegacao por ancoras e
   skip link para o conteudo principal.
-- [ ] T013 Implementar `Hero.astro` com localizacao, posicionamento
+- [x] T013 Implementar `Hero.astro` com localizacao, posicionamento
   profissional, texto de apresentacao e chamadas para trajetoria e contato.
-- [ ] T014 Implementar `AboutSection.astro` com biografia, slot de fotografia
+- [x] T014 Implementar `AboutSection.astro` com biografia, slot de fotografia
   e tratamento para alt text quando a imagem for adicionada.
-- [ ] T015 Implementar `Timeline.astro` com periodo, cargo, empresa,
+- [x] T015 Implementar `Timeline.astro` com periodo, cargo, empresa,
   localizacao e resultados profissionais.
-- [ ] T016 Implementar `SkillsSection.astro` com grupos de stack,
+- [x] T016 Implementar `SkillsSection.astro` com grupos de stack,
   infraestrutura, ferramentas e soft skills.
-- [ ] T017 Implementar `ProjectsSection.astro` com cards, descricao,
+- [x] T017 Implementar `ProjectsSection.astro` com cards, descricao,
   tecnologias, ano e links apenas para projetos confirmados.
-- [ ] T018 Implementar `PublicationsSection.astro` com publicacoes,
+- [x] T018 Implementar `PublicationsSection.astro` com publicacoes,
   certificacoes e referencias externas.
-- [ ] T019 Implementar `ContactSection.astro` com e-mail, LinkedIn e GitHub,
+- [x] T019 Implementar `ContactSection.astro` com e-mail, LinkedIn e GitHub,
   usando links com rotulos acessiveis.
-- [ ] T020 Implementar `SiteFooter.astro` com autoria, localizacao e ano.
-- [ ] T021 Compor todos os componentes em `index.astro` e conferir a ordem de
+- [x] T020 Implementar `SiteFooter.astro` com autoria, localizacao e ano.
+- [x] T021 Compor todos os componentes em `index.astro` e conferir a ordem de
   leitura sem CSS.
 
 ## Fase 4: Identidade visual e responsividade
 
-- [ ] T022 Aplicar a hierarquia Fraunces, Inter e JetBrains Mono com fallback e
+- [x] T022 Aplicar a hierarquia Fraunces, Inter e JetBrains Mono com fallback e
   estrategia de carregamento definida.
-- [ ] T023 [P] Adicionar detalhes de rota, estrelas, selos e demais ornamentos
+- [x] T023 [P] Adicionar detalhes de rota, estrelas, selos e demais ornamentos
   do mockup com markup decorativo nao intrusivo.
 - [ ] T024 [P] Definir tratamento visual para fotografia, favicon e imagens
   locais usando Astro Assets quando houver arquivos disponiveis.
-- [ ] T025 Implementar layout mobile-first para todas as secoes e ajustar o
+- [x] T025 Implementar layout mobile-first para todas as secoes e ajustar o
   comportamento em viewport desktop.
-- [ ] T026 Verificar contraste, estados de hover/foco, tamanhos estaveis de
+- [x] T026 Verificar contraste, estados de hover/foco, tamanhos estaveis de
   botoes e tags e ausencia de rolagem horizontal.
 
 ## Fase 5: Validacao e entrega
