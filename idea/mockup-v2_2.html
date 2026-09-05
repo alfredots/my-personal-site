@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Alfredo Tito — Frontend Sênior</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233F;
+    --ink-2:#0E1830;
+    --dusk-a:#16233F;
+    --dusk-b:#6B3A2E;
+    --dusk-c:#C6753B;
+    --kiki-red:#B33B2E;
+    --kiki-red-light:#D8624F;
+    --parchment:#F2E6CC;
+    --brass:#C89B4A;
+    --ocean:#7FA6BE;
+    --cloud:#F7F3E8;
+    --cloud-dim:#C9CEDB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--ink);color:var(--cloud);font-family:'Inter',sans-serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  header{display:flex;justify-content:space-between;align-items:center;padding:28px 32px;max-width:1080px;margin:0 auto;}
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:0.02em;}
+  .logo span{color:var(--kiki-red-light);}
+  .logo small{display:block;font-family:'JetBrains Mono',monospace;font-weight:400;font-size:11px;letter-spacing:0.08em;color:var(--cloud-dim);text-transform:uppercase;margin-top:2px;}
+  nav{display:flex;gap:24px;font-size:14px;color:var(--cloud-dim);}
+  nav a:hover{color:var(--cloud);}
+
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg, var(--dusk-a) 0%, var(--dusk-a) 40%, var(--dusk-b) 78%, var(--dusk-c) 100%);padding:80px 32px 120px;}
+  .hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:2;}
+  .route-line{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0.55;}
+  .stars circle{fill:var(--cloud);opacity:0.5;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.12em;color:var(--brass);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--brass);}
+  h1.headline{font-family:'Fraunces',serif;font-weight:500;font-size:46px;line-height:1.18;max-width:700px;color:var(--cloud);}
+  .hero p.sub{margin-top:22px;max-width:520px;color:var(--cloud-dim);font-size:17px;}
+  .hero-cta{margin-top:36px;display:flex;gap:14px;}
+  .btn{font-family:'JetBrains Mono',monospace;font-size:13px;padding:13px 22px;border-radius:3px;display:inline-flex;align-items:center;gap:8px;letter-spacing:0.02em;}
+  .btn-primary{background:var(--kiki-red);color:var(--cloud);}
+  .btn-ghost{border:1px solid rgba(247,243,232,0.3);color:var(--cloud);}
+
+  section{padding:76px 32px;}
+  .section-title{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brass);margin-bottom:10px;}
+  h2.section-head{font-family:'Fraunces',serif;font-weight:500;font-size:32px;color:var(--cloud);margin-bottom:36px;}
+
+  /* SOBRE */
+  .about{background:var(--ink-2);}
+  .about-card{background:var(--parchment);color:#3A2E1F;border-radius:6px;padding:40px;display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:start;position:relative;}
+  .avatar-slot{width:120px;height:120px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--cloud-dim);font-family:'JetBrains Mono',monospace;font-size:11px;text-align:center;border:3px solid var(--kiki-red);}
+  .stamp{position:absolute;top:18px;right:18px;width:56px;height:56px;border:2px solid var(--kiki-red);border-radius:50%;color:var(--kiki-red);font-family:'JetBrains Mono',monospace;font-size:9px;text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.2;letter-spacing:0.03em;transform:rotate(-8deg);}
+  .about-card p{font-size:16px;margin-bottom:14px;}
+  .about-card p:last-child{margin-bottom:0;}
+
+  /* TRAJETORIA - TIMELINE DE VOO */
+  .timeline{background:var(--ink);}
+  .tl{position:relative;padding-left:36px;}
+  .tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:repeating-linear-gradient(to bottom, var(--brass) 0 6px, transparent 6px 12px);}
+  .tl-item{position:relative;padding-bottom:44px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{position:absolute;left:-36px;top:4px;width:13px;height:13px;border-radius:50%;background:var(--ink);border:2px solid var(--kiki-red-light);}
+  .tl-item.current .tl-dot{background:var(--kiki-red-light);}
+  .tl-period{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--brass);letter-spacing:0.03em;margin-bottom:4px;}
+  .tl-role{font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:var(--cloud);margin-bottom:2px;}
+  .tl-company{font-size:13.5px;color:var(--ocean);margin-bottom:10px;}
+  .tl-achievements{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .tl-achievements li{font-size:14px;color:var(--cloud-dim);padding-left:16px;position:relative;}
+  .tl-achievements li::before{content:"—";position:absolute;left:0;color:var(--brass);}
+  .tl-achievements li strong{color:var(--cloud);font-weight:500;}
+
+  /* HABILIDADES - BAGAGEM */
+  .skills{background:var(--ink-2);}
+  .skills-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;}
+  .skill-group{margin-bottom:28px;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--brass);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;}
+  .bag{display:flex;flex-wrap:wrap;gap:10px;}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:12px;padding:8px 14px;border:1px solid rgba(200,155,74,0.4);border-radius:20px;color:var(--brass);}
+  .soft-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .soft-list li{font-size:14.5px;color:var(--cloud-dim);padding-left:18px;position:relative;}
+  .soft-list li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--kiki-red-light);}
+
+  /* PROJETOS - ENCOMENDAS */
+  .projects{background:var(--ink);}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .parcel{background:var(--ink-2);border-radius:4px;padding:24px 20px 20px;position:relative;border:1px solid rgba(247,243,232,0.08);}
+  .twine{position:absolute;top:0;left:50%;transform:translateX(-50%);width:80%;height:14px;}
+  .parcel-stamp{position:absolute;top:18px;right:16px;width:46px;height:46px;border:1.5px solid var(--brass);border-radius:50%;color:var(--brass);font-family:'JetBrains Mono',monospace;font-size:8px;text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.15;transform:rotate(6deg);}
+  .parcel h3{font-family:'Fraunces',serif;font-size:19px;font-weight:500;margin-top:18px;margin-bottom:8px;max-width:75%;color:var(--cloud);}
+  .parcel p{font-size:13.5px;color:var(--cloud-dim);margin-bottom:14px;}
+  .parcel .stack{display:flex;flex-wrap:wrap;gap:6px;}
+  .parcel .stack span{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--kiki-red-light);border:1px solid rgba(179,59,46,0.4);padding:3px 8px;border-radius:3px;}
+  .list-note{font-size:12.5px;color:var(--cloud-dim);margin-top:18px;font-style:italic;}
+
+  /* PUBLICACOES E CERTIFICACOES */
+  .pubs{background:var(--ink-2);}
+  .pubs-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .pub-card{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
+  .pub-card:last-child{margin-bottom:0;}
+  .pub-seal{flex-shrink:0;width:40px;height:40px;border-radius:50%;border:1.5px dashed var(--brass);display:flex;align-items:center;justify-content:center;color:var(--brass);font-size:15px;font-family:'Fraunces',serif;}
+  .pub-title{font-size:14.5px;color:var(--cloud);line-height:1.5;}
+  .pub-sub{font-size:12px;color:var(--cloud-dim);margin-top:2px;}
+  .cert-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(247,243,232,0.08);font-size:14px;color:var(--cloud-dim);}
+  .cert-item:last-child{border-bottom:none;}
+  .cert-item::before{content:"✓";color:var(--kiki-red-light);font-family:'JetBrains Mono',monospace;font-size:12px;}
+
+  /* CONTATO */
+  .contact{background:linear-gradient(180deg,var(--ink) 0%, var(--dusk-b) 100%);text-align:center;padding:96px 32px;}
+  .contact h2{font-family:'Fraunces',serif;font-size:34px;font-weight:500;max-width:540px;margin:0 auto 16px;}
+  .contact p{color:var(--cloud-dim);max-width:440px;margin:0 auto 32px;}
+  .contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  footer{padding:28px 32px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cloud-dim);border-top:1px solid rgba(247,243,232,0.08);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ALFREDO<span>TITO</span><small>trajetória de um dev frontend</small></div>
+  <nav>
+    <a href="#sobre">sobre</a>
+    <a href="#trajetoria">trajetória</a>
+    <a href="#habilidades">habilidades</a>
+    <a href="#projetos">projetos</a>
+    <a href="#publicacoes">publicações</a>
+    <a href="#contato">contato</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <svg class="route-line" viewBox="0 0 1080 420" preserveAspectRatio="none">
+    <g class="stars">
+      <circle cx="120" cy="60" r="1.4"/><circle cx="260" cy="110" r="1"/>
+      <circle cx="700" cy="50" r="1.6"/><circle cx="900" cy="90" r="1"/>
+      <circle cx="480" cy="40" r="1.2"/><circle cx="960" cy="150" r="1"/>
+    </g>
+    <path d="M -20 360 C 200 320, 350 280, 520 230 S 850 100, 1100 50" fill="none" stroke="#F7F3E8" stroke-width="1" stroke-dasharray="2 8" stroke-linecap="round"/>
+    <circle cx="1085" cy="48" r="4" fill="#C89B4A"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="eyebrow">são paulo, sp · frontend sênior</div>
+    <h1 class="headline">De pesquisador em histórias interativas a engenheiro frontend sênior no <em style="font-style:italic;color:var(--kiki-red-light);">Itaú</em>.</h1>
+    <p class="sub">Alfredo Tito — quase 10 anos de estrada em frontend, de bibliotecas
+      de UI a produtos financeiros de larga escala. React, Next.js e performance
+      são meu ofício.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#trajetoria">ver trajetória ↓</a>
+      <a class="btn btn-ghost" href="#contato">contato</a>
+    </div>
+  </div>
+</div>
+
+<section class="about" id="sobre">
+  <div class="wrap">
+    <div class="section-title">01 — apresentação</div>
+    <h2 class="section-head">Sobre</h2>
+    <div class="about-card">
+      <div class="avatar-slot">foto<br>aqui</div>
+      <div>
+        <div class="stamp">SDE<br>KORIKO</div>
+        <p>Formado em Ciência da Computação pela UFMA, comecei em 2016 como
+          pesquisador no laboratório Telemídia — foi lá que a paixão por
+          interfaces web pegou de vez.</p>
+        <p>Hoje sou Analista de Engenharia de TI Pleno no Itaú Unibanco, depois
+          de passar por Dotz, NoVerde e Grupo Mateus — sempre no frontend,
+          sempre buscando performance, escala e boa experiência de uso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="trajetoria">
+  <div class="wrap">
+    <div class="section-title">02 — a rota até aqui</div>
+    <h2 class="section-head">Trajetória</h2>
+    <div class="tl">
+
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-period">fev/2026 — presente</div>
+        <div class="tl-role">Analista de Engenharia de TI Pleno</div>
+        <div class="tl-company">Itaú Unibanco · São Paulo, SP</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-period">out/2024 — jan/2026</div>
+        <div class="tl-role">Senior / Mid-Level Frontend Developer</div>
+        <div class="tl-company">Dotz · jun/2023 — jan/2026 · São Paulo, SP</div>
+        <ul class="tl-achievements">
+          <li>Migrei o Ganhe Online de Angular para Next.js (SSR + ISR):
+            PageSpeed de <strong>22 para 85</strong> (+286%)</li>
+          <li>Ampliei páginas indexadas de <strong>150 para 400+</strong>
+            (+165% de tráfego orgânico)</li>
+          <li>Atualizei a extensão Lembrador (React + Vite):
+            <strong>+9% de conversão</strong></li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-period">jun/2021 — jan/2024</div>
+        <div class="tl-role">Frontend Jr. → Pleno</div>
+        <div class="tl-company">NoVerde · Fintech / Empréstimos · São Paulo, SP</div>
+        <ul class="tl-achievements">
+          <li>Evoluí a biblioteca interna de UI (React, Storybook, Design Tokens)</li>
+          <li>Criei o site institucional com SSG na AWS (S3 + CloudFront)</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-period">set/2020 — jun/2021</div>
+        <div class="tl-role">Programador Júnior</div>
+        <div class="tl-company">Grupo Mateus · Varejo · São Luís, MA</div>
+        <ul class="tl-achievements">
+          <li>Sistemas de RH com Vue.js, Vuetify e Vuex</li>
+          <li>Suporte a app desktop em C++ com Qt</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-period">2016 — set/2020</div>
+        <div class="tl-role">Pesquisador</div>
+        <div class="tl-company">Telemídia/MA · com passagens por UNA/SUS, EuQuero e QRCodeReader</div>
+        <ul class="tl-achievements">
+          <li>Biblioteca para histórias interativas não-lineares (AngularJS)</li>
+          <li>Base do que depois viraria minhas publicações sobre FableJS</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="habilidades">
+  <div class="wrap">
+    <div class="section-title">03 — a bagagem</div>
+    <h2 class="section-head">Habilidades</h2>
+    <div class="skills-grid">
+      <div>
+        <div class="skill-group">
+          <div class="skill-label">stack</div>
+          <div class="bag">
+            <span class="tag">React</span><span class="tag">Next.js</span>
+            <span class="tag">Vue.js</span><span class="tag">Angular</span>
+            <span class="tag">TypeScript</span><span class="tag">Node.js</span>
+            <span class="tag">Java / Spring Boot</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">infra & dados</div>
+          <div class="bag">
+            <span class="tag">AWS</span><span class="tag">Azure</span>
+            <span class="tag">Firebase</span><span class="tag">Google Analytics</span>
+            <span class="tag">Tag Manager</span><span class="tag">React Query</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">ferramentas</div>
+          <div class="bag">
+            <span class="tag">Git</span><span class="tag">NPM / Yarn</span>
+            <span class="tag">VS Code</span><span class="tag">Material UI</span>
+            <span class="tag">GitLab</span><span class="tag">Trello</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-label">soft skills</div>
+        <ul class="soft-list">
+          <li>Rápido aprendizado</li>
+          <li>Criatividade</li>
+          <li>Ótimo em resolução de problemas</li>
+          <li>Bom em dar e receber feedback</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projetos">
+  <div class="wrap">
+    <div class="section-title">04 — encomendas entregues</div>
+    <h2 class="section-head">Projetos</h2>
+    <div class="grid">
+      <div class="parcel">
+        <svg class="twine" viewBox="0 0 200 14"><path d="M20 0 Q100 26 180 0" stroke="#C89B4A" stroke-width="1.4" fill="none" opacity="0.6"/></svg>
+        <div class="parcel-stamp">ENTREGUE<br>2023</div>
+        <h3>Unx</h3>
+        <p>Plataforma web — interface e fluxo de produto.</p>
+        <div class="stack"><span>React</span><span>TS</span></div>
+      </div>
+      <div class="parcel">
+        <svg class="twine" viewBox="0 0 200 14"><path d="M20 0 Q100 26 180 0" stroke="#C89B4A" stroke-width="1.4" fill="none" opacity="0.6"/></svg>
+        <div class="parcel-stamp">ENTREGUE<br>2023</div>
+        <h3>Proffy</h3>
+        <p>App de conexão entre professores e alunos.</p>
+        <div class="stack"><span>React</span><span>Node</span></div>
+      </div>
+      <div class="parcel">
+        <svg class="twine" viewBox="0 0 200 14"><path d="M20 0 Q100 26 180 0" stroke="#C89B4A" stroke-width="1.4" fill="none" opacity="0.6"/></svg>
+        <div class="parcel-stamp">ENTREGUE<br>2022</div>
+        <h3>World trip</h3>
+        <p>Planejador de viagens com mapa interativo.</p>
+        <div class="stack"><span>React</span><span>Maps API</span></div>
+      </div>
+    </div>
+    <p class="list-note">* lista provisória — aguardando a seleção atualizada de projetos</p>
+  </div>
+</section>
+
+<section class="pubs" id="publicacoes">
+  <div class="wrap">
+    <div class="section-title">05 — selos de bordo</div>
+    <h2 class="section-head">Publicações & Certificações</h2>
+    <div class="pubs-grid">
+      <div>
+        <div class="skill-label">publicações</div>
+        <div class="pub-card">
+          <div class="pub-seal">✎</div>
+          <div>
+            <div class="pub-title">Utilizando FableJS como Ferramenta de Apoio à Criação de Histórias Interativas</div>
+            <div class="pub-sub">Artigo acadêmico</div>
+          </div>
+        </div>
+        <div class="pub-card">
+          <div class="pub-seal">✎</div>
+          <div>
+            <div class="pub-title">Improving the Authoring of Web-based Interactive E-books with FableJS</div>
+            <div class="pub-sub">Artigo acadêmico</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-label">certificações</div>
+        <div class="cert-item">Desenvolvimento avançado com JavaScript ES6</div>
+        <div class="cert-item">Domine a Arquitetura Limpa e Hexagonal</div>
+        <div class="cert-item">Curso Online de UI Design</div>
+        <div class="cert-item">Curso Web Moderno Completo com JavaScript 2022 + Projetos</div>
+        <div class="cert-item">Engenharia de Prompt</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="section-title" style="text-align:center;">06 — correspondência</div>
+  <h2>Vamos trocar uma ideia?</h2>
+  <p>Aberto a conversas sobre novas oportunidades, projetos ou só falar de frontend.</p>
+  <div class="contact-links">
+    <a class="btn btn-primary" href="mailto:alfredtito97@gmail.com">e-mail</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/alfredots">linkedin ↗</a>
+    <a class="btn btn-ghost" href="https://github.com/alfredots">github ↗</a>
+  </div>
+</section>
+
+<footer>alfredots · são paulo, sp, brasil · © 2026</footer>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+---
+import { portfolio } from '../content/portfolio';
+---
+
+<section class="section projects" id="projetos" aria-labelledby="projetos-title">
+	<div class="wrap">
+		<p class="section-kicker">04 — encomendas entregues</p>
+		<h2 id="projetos-title">Projetos</h2>
+		<div class="project-grid">
+			{portfolio.projects.map((project) => (
+				<article class="project-card">
+					<span class="project-stamp">ENTREGUE<br />{project.year}</span>
+					<h3>{project.name}</h3>
+					<p>{project.description}</p>
+					<div class="project-stack">{project.stack.map((technology) => <span>{technology}</span>)}</div>
+				</article>
+			))}
+		</div>
+		<p class="section-note">* lista provisória — aguardando a seleção atualizada de projetos</p>
+	</div>
+</section>

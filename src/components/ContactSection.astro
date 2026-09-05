@@ -1,0 +1,16 @@
+---
+import { portfolio } from '../content/portfolio';
+---
+
+<section class="contact" id="contato" aria-labelledby="contato-title">
+	<div class="wrap">
+		<p class="section-kicker">06 — correspondência</p>
+		<h2 id="contato-title">Vamos trocar uma ideia?</h2>
+		<p>Aberto a conversas sobre novas oportunidades, projetos ou só falar de frontend.</p>
+		<div class="contact-links">
+			<a class="button button-primary" href={`mailto:${portfolio.contact.email}`}>e-mail</a>
+			<a class="button button-ghost" href={portfolio.contact.linkedin} target="_blank" rel="noreferrer">linkedin <span aria-hidden="true">↗</span></a>
+			<a class="button button-ghost" href={portfolio.contact.github} target="_blank" rel="noreferrer">github <span aria-hidden="true">↗</span></a>
+		</div>
+	</div>
+</section>

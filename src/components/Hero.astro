@@ -1,0 +1,16 @@
+---
+import { portfolio } from '../content/portfolio';
+---
+
+<section class="hero" aria-labelledby="hero-title">
+	<div class="route-line" aria-hidden="true"></div>
+	<div class="hero-inner wrap">
+		<p class="eyebrow">{portfolio.location} · {portfolio.role}</p>
+		<h1 id="hero-title">{portfolio.hero.headline}</h1>
+		<p class="hero-summary">{portfolio.hero.summary}</p>
+		<div class="hero-actions">
+			<a class="button button-primary" href="#trajetoria">ver trajetória <span aria-hidden="true">↓</span></a>
+			<a class="button button-ghost" href="#contato">contato</a>
+		</div>
+	</div>
+</section>
